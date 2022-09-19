@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const App = () => {
-  const [temperatureValue, setTemperatureValue] = useState(10);
+  const [temperatureValue, setTemperatureValue] = useState(60);
   const [temperatureColor, setTemperatureColor] = useState("cold");
 
   const increaseTemperature = () => {
@@ -11,7 +11,7 @@ const App = () => {
     const newTemperature = temperatureValue + 1;
 
     setTemperatureValue(newTemperature);
-    if (newTemperature >= 15) {
+    if (newTemperature >= 70) {
       setTemperatureColor("hot");
     }
   };
@@ -21,7 +21,7 @@ const App = () => {
 
     const newTemperature = temperatureValue - 1;
     setTemperatureValue(newTemperature);
-    if (newTemperature < 20) {
+    if (newTemperature < 70) {
       setTemperatureColor("cold");
     }
   };
@@ -30,7 +30,7 @@ const App = () => {
     <div className="app-container">
       <div className="temperature-display-container">
         <div className={`temperature-display ${temperatureColor}`}>
-          {temperatureValue}°C
+          {temperatureValue}°F
         </div>
       </div>
       <div className="button-container">
